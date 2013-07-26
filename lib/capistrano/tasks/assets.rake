@@ -42,8 +42,8 @@ namespace :deploy do
     end
   end
 
-  after 'deploy:updated', 'deploy:compile_assets'
   after 'deploy:updated', 'deploy:cleanup_assets'
+  after 'deploy:updated', 'deploy:compile_assets'
   after 'deploy:updated', 'deploy:normalise_assets'
   after 'deploy:reverted', 'deploy:rollback_assets'
 
